@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace AssemblyBrowser
 {
-    class TreeNode
+    public class TreeNode
     {
         public string name { get; }
         public List<TreeNode> childs { get; set; }

@@ -46,7 +46,7 @@ namespace AssemblyBrowser
                     var parameters = method.GetParameters();
                     foreach (var param in parameters)
                     {
-                        methodNode.AddChild(new TreeNode(param.Name + " : " + param.ParameterType));
+                        methodNode.AddChild(new TreeNode(param.ParameterType + " : " + param.Name));
                     }
                     info.AddItemToLastAddedType(namespaceName, methodNode, ItemType.Method);
                 }
@@ -58,7 +58,7 @@ namespace AssemblyBrowser
                     var parameters = ctor.GetParameters();
                     foreach (var param in parameters)
                     {
-                        ctorNode.AddChild(new TreeNode(param.Name + " : " + param.ParameterType));
+                        ctorNode.AddChild(new TreeNode(param.ParameterType+ " : " + param.Name));
                     }
                     info.AddItemToLastAddedType(namespaceName, ctorNode, ItemType.Ctor);
                 }

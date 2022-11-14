@@ -6,7 +6,19 @@
         xmlns:local="clr-namespace:AssemblyBrowserApp"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
+    <Window.DataContext>
+        <local:PageView x:Name="pageView"/>
+    </Window.DataContext>
     <Grid>
-        
+        <Menu>
+            <MenuItem Header="Load File" Click="MenuItem_Click"/>
+        </Menu>
+        <TreeView Margin="0 20 0 0" ItemsSource="{Binding Data}">
+            <TreeView.ItemTemplate>
+                <HierarchicalDataTemplate ItemsSource="{Binding Path=childs}">
+                    <TextBlock Text="{Binding name}"/>
+                </HierarchicalDataTemplate>
+            </TreeView.ItemTemplate>
+        </TreeView>
     </Grid>
 </Window>
